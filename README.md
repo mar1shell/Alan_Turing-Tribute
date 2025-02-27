@@ -1,7 +1,7 @@
 # Alan Turing Tribute
 
 ## Hosting  
-This project is hosted on GitHub Pages. You can view it [here](https://mar1shell.github.io/Alan_Turing-Tribute/){:target="_blank"}.
+This project is hosted on GitHub Pages. You can view it <a href="https://mar1shell.github.io/Alan_Turing-Tribute/." target="_blank">here</a>.
 
 ## Overview  
 Alan Turing Tribute is a project created to honor the life and achievements of Alan Turing, the father of modern computing. Built with HTML and CSS, this page highlights his groundbreaking work, struggles, and lasting legacy in an engaging and responsive design.
