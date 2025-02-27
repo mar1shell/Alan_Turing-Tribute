@@ -1,0 +1,318 @@
+/******** GLOBAL ***********/
+
+/****************** IMPORTANT INFOS ABOUT COLORS *********************
+--text-color-main for general paragraph text
+--text-color-alt for important points or sub-sections
+--text-color-highlight for dates or key terms
+--text-color-emphasis for important achievements
+--text-color-quote for quotes or special callouts 
+*********************************************************************/
+
+:root {
+    --background-color: #0F0F0F;
+    --primary-heading-color: #33FF33;
+    --secondary-heading-color: #00FFCC;
+    --primary-text-color: #E0E0E0;     /* Bright white with slight grey */
+    --secondary-text-color: #00FF9F;      /* Bright mint */
+    --text-color-highlight: #FF71CE; /* Bright pink */
+    --text-color-emphasis: #00FFFF;  /* Bright cyan */
+    --text-color-quote: #FF9F00;     /* Bright orange */
+    --border-color: #1A1A1A;
+    --link-hover-color: #FFFF00;
+    --font-main: 'VT323', monospace;
+}
+
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    
+    /* Set base font size for rem units */
+    font-size: 16px;  /* Standard base size */
+    
+    /* Ensure proper viewport height handling */
+    height: 100%;
+    
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Better box sizing */
+    box-sizing: border-box;
+    
+    /* Improve scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Prevent font size adjustment on orientation change */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(15, 15, 15, 0.91) ,rgba(15, 15, 15, 0.9)), url(/assets/images/background.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--font-main);
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        padding: 0 20px;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+/***************************/
+
+/***** CLASSES *************/
+
+.block {
+    display: block;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.article-paragraph {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+}
+
+.date {
+    color: var(--secondary-text-color);
+}
+
+.footer-paragraph {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.link {
+    color: var(--secondary-heading-color);
+    transition: color 0.8s;
+}
+
+.link:hover {
+    color: var(--text-color-highlight);
+}
+
+/***************************/
+
+/******* intro section ****/
+
+#intro {
+    max-width: 1024px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    #intro {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+#img-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 30px 0 0;
+}
+
+#image {
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border: none;
+    border-radius: 7px;
+    margin-bottom: 20px;
+
+    /* Optional: Prevent dragging */
+    user-drag: none;
+    -webkit-user-drag: none;
+    
+    /* Optional: Prevent highlighting */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@media screen and (max-width: 500px) {
+    #image {
+        width: 80%;
+    }
+    
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 30px;
+    font-size: 2.7rem;
+    color: var(--primary-heading-color);
+}
+
+h1 span {
+    display: block;
+}
+
+#title blockquote {
+    font-size: 2rem;
+    margin-left: 30px;
+}
+
+#title blockquote, figcaption {
+    color: var(--secondary-heading-color);
+}
+
+@media screen and (max-width: 900px) {
+    #title {
+        align-items: center;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0 0 30px 0;
+    }
+
+    #title blockquote {
+        text-align: center;
+        margin: 0 10px 50px 10px;
+    }
+}
+
+#arrow-div {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    justify-content: center;
+}
+
+#arrow {
+    width: 80px;
+    height: auto;
+    color: rgba(255, 255, 255, 0.15);
+    animation: arrowmation 2.5s infinite;
+    transition: color 1s;
+}
+
+#arrow:hover {
+    color: rgba(255, 255, 255, 0.4);;
+}
+
+@keyframes arrowmation {
+    0%, 40% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-20px);
+    }
+}
+
+@media  screen and (max-width:768px) {
+    #arrow {
+        display: none;
+    }
+}
+
+/***************************/
+
+/******** Tribute info *****/
+
+#tribute-info {
+    margin: auto;
+    max-width: 768px;
+}
+
+h2 {
+    font-size: 2.3rem;
+    color: var(--primary-heading-color);
+
+}
+
+article {
+    padding: 1px;
+    margin-bottom: 30px;
+} 
+
+@media screen and (max-width: 900px) {
+    h2, p {
+        text-align: center;
+    }
+}
+
+/***************************/
+
+/********** Quote *********/
+
+#quote {
+    margin: auto;
+    padding: 1px;
+    margin-bottom: 30px;
+    max-width: 768px;
+}
+
+#quote blockquote {
+    margin: 60px 0;
+}
+
+#quote blockquote > p {
+    margin-bottom: 5px;
+    color: var(--secondary-heading-color);
+    font-size: 2.4rem;
+}
+
+cite {
+    display: block;
+    color: var(--secondary-heading-color);
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+hr {
+    margin: 50px 0;
+    border: 0;
+    border-top: 3px solid var(--primary-heading-color);
+}
+
+#heart {
+    width: 10px;
+    height: auto;
+    color: var(--primary-heading-color);
+}
+
+/***************************/
